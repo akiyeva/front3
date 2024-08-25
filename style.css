@@ -1,0 +1,37 @@
+.main-div{
+    display: block;
+    margin: 6rem 20rem;
+    text-align: center;
+    background-color: rgb(2, 2, 138);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+body{
+    background-color:rgb(122, 184, 254);
+}
+
+.header{
+    color: white;
+}
+
+.p-item{
+    color: white;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.delete-btn{
+    background-color: yellow;
+}
+
+.add-btn{
+    background-color: red;
+    border: none;
+    padding: 0.15rem 0.8rem;
+}

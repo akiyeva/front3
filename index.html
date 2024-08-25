@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <div class="main-div">
+      <h1 class="header">Todo list</h1>
+      <input class="add-input" id="input-id" />
+      <button class="add-btn" type="submit" id="submit-id" onclick="addTask()">Add Task</button>
+      <div class="d-flex div-class">
+        <p class="p-item">JavaScript</p>
+        <button class="delete-btn" id="delete-id" onclick="deleteTask()">Delete</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function addTask() {
+      var input = document.getElementById("input-id");
+      var taskText = input.value.trim();
+
+      if (taskText) {
+        var taskDiv = document.createElement("div");
+        taskDiv.className = "d-flex div-class";
+
+        var taskP = document.createElement("p");
+        taskP.className = "p-item";
+        taskP.textContent = taskText;
+
+        var deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.textContent = "Delete";
+
+        deleteBtn.onclick = function () {
+          taskDiv.remove();
+        };
+
+        taskDiv.appendChild(taskP);
+        taskDiv.appendChild(deleteBtn);
+
+        document.querySelector(".main-div").appendChild(taskDiv);
+
+        input.value = "";
+      }
+    }
+
+    function deleteTask() {
+      document.querySelector(".div-class").remove();
+    }
+
+</script>
 </html>
